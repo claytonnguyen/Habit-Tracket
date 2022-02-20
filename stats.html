@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <head>
+    <title>Habit-Tracket Stats</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stats.css">
+  </head>
+
+  <body>
+    <h1>Stats</h1>
+    <div class="dropdown">
+        <button class="dropbtn">Select Habit</button>
+        <div style="height:200px; overflow-y:scroll" class="dropdown-content">
+          <a href="#">Habit1</a>
+          <a href="#">Habit2</a>
+          <a href="#">Habit3</a>
+          <a href="#">Habit4</a>
+          <a href="#">Habit5</a>
+          <a href="#">Habit6</a>
+          
+        </div>
+      </div>
+      
+      <canvas id="graph" style="width:100%;max-width:700px"></canvas>
+
+  </body>
+  
+  <script>
+      
+  var habit = ["Working Out"];
+  var dates = ["2/16", "2/17", "2/18","2/19", "2/20", "2/21"];
+  var counts = [10, 90, 30, 15, 0, 45];
+  
+  new Chart("graph", {
+    type: "bar",
+    data: {
+      labels: dates,
+      datasets: [{
+        backgroundColor: "orange",
+        data: counts
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+          display: true,
+          text: habit
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  </script>
+
+</html>
